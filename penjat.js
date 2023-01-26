@@ -1,4 +1,3 @@
-
  var vidas= 7;
         var palabro="";
         var letra="";
@@ -14,19 +13,40 @@
            palabro=lletra+palabro+""
          document.getElementById("palabro").innerHTML=palabro;
        }
-       if ((vidas==6)){
-           
-       }
+       
   if ((vidas==0)){
       window.alert("Has perdut");
+      document.getElementById("A0").hidden="false";
       lletra="";
   }   
   if ((vidas==6)){
-      document.getElementById("A0").hidden="false";
+      window.alert("malament");
+      document.getElementById("A6").hidden="false";
   }
+  if ((vidas==5)){
+      window.alert("malament");
+      document.getElementById("A5").hidden="false";
+  }
+  if ((vidas==4)){
+      window.alert("malament");
+      document.getElementById("A4").hidden="false";
+  }
+  if ((vidas==3)){
+      window.alert("malament");
+      document.getElementById("A3").hidden="false";
+  }
+  if ((vidas==2)){
+      window.alert("malament");
+      document.getElementById("A2").hidden="false";
+  }
+  if ((vidas==1)){
+      window.alert("malament");
+      document.getElementById("A1").hidden="false";
+  }
+ 
   }   
 
-if ((vidas==7)){
+
     function Esconder(){
     document.getElementById("A0").hidden="true";
     document.getElementById("A1").hidden="true";
@@ -36,12 +56,3 @@ if ((vidas==7)){
     document.getElementById("A5").hidden="true";
     document.getElementById("A6").hidden="true";
     }
-}
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
