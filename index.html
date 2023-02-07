@@ -1,20 +1,38 @@
 <html>
     <script src="penjat.js"></script>
+    <style>
+        #A6{position:relative; top:-350px; left:300px;}
+        #A5{position:relative; top:-350px; left:300px;}
+        #A4{position:relative; top:-350px; left:300px;}
+        #A3{position:relative; top:-350px; left:300px;}
+        #A2{position:relative; top:-350px; left:300px;}
+        #A1{position:relative; top:-350px; left:300px;}
+        #A0{position:relative; top:-350px; left:300px;}
+        
+        html {
+            background:#222;
+            margin:auto;
+            widht:640px;
+            height:480px;
+        }
+        
+        body{
+            background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+            border:1px solid black;
+            padding:10px 20px;
+            box-shadow:5px opx 30px #000;
+            border-radius:8px;
+        }
+    </style>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body onload="Esconder()" style="background-image: url('img/desierto.jpg');
-    background-size: 640px 480px; background-repeat: no-repeat;">
-        <img src="img/ahorcado_0.png" id="A0" width="300" height="295"/>
-        <img src="img/ahorcado_1.png" id="A1" width="300" height="295"/>
-        <img src="img/ahorcado_2.png" id="A2" width="300" height="295"/>
-        <img src="img/ahorcado_3.png" id="A3" width="300" height="295"/>
-        <img src="img/ahorcado_4.png" id="A4" width="300" height="295"/>
-        <img src="img/ahorcado_5.png" id="A5" width="300" height="295"/>
-        <img src="img/ahorcado_6.png" id="A6" width="300" height="295"/>
-        <img src="img/desierto.jpg" alt=""/>
+    <body onload="Esconder(); document.getElementById('misterio').play();"
+          style="background-image: url('img/desierto.jpg');
+          background-size: 640px 480px; background-repeat: no-repeat;">
+        
         <div>Prototip Joc del Penjat</div>
         <input type="text" id="lletra" placeholder="escriu la lletra en minuscules">
         <button onclick="Verificar()">Comproba</button>
@@ -33,5 +51,51 @@
         <a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat-on-scratch/">El joc del penjat on Scratch</a>
         
         <a href="https://joc-del-penjat.netlify.app/">&nbsp;&nbsp;Mi netlify</a>
+        
+        <div> 
+        <img src="img/ahorcado_0.png" id="A0" width="300" height="295"/>
+        <img src="img/ahorcado_1.png" id="A1" width="300" height="295"/>
+        <img src="img/ahorcado_2.png" id="A2" width="300" height="295"/>
+        <img src="img/ahorcado_3.png" id="A3" width="300" height="295"/>
+        <img src="img/ahorcado_4.png" id="A4" width="300" height="295"/>
+        <img src="img/ahorcado_5.png" id="A5" width="300" height="295"/>
+        <img src="img/ahorcado_6.png" id="A6" width="300" height="295"/>
+        <img src="img/desierto.jpg" id="fondo"/>
+        <img src="img/descarga.jpg" id="fondo1"/>
+        </div>
+        <div>
+            <audio controls>
+                <source src="aud/bell_toll.mp3" type="audio/mpeg" id="campanada">
+                Your browser does not support the <code>audio</code> tag.
+                 </audio>
+                <audio controls>
+                    <source src="aud/bell_toll_x3.mp3" type="audio/mpeg" id="campanadax3">
+                    Your browser does not support the <code>audio</code> tag.
+                </audio>
+                <audio controls>
+                    <source src="aud/boom_cloud.mp3" type="audio/mpeg" id="Fallo">
+                    Your browser does not support the <code>audio</code> tag.
+                </audio>
+                <audio controls>
+                    <source src="aud/cat-fight.mp3" type="audio/mpeg" id="G1">
+                    Your browser does not support the <code>audio</code> tag.
+                </audio>
+            <audio controls>
+                <source src="aud/cheer.mp3" type="audio/mpeg" id="aplauso">
+                Your browser does not support the <code>audio</code> tag.
+            </audio>
+            <audio controls>
+                <source src="aud/clock_ticking.mp3" type="audio/mpeg" id="tictac">
+                Your browser does not support the <code>audio</code> tag.
+            </audio>
+            <audio controls>
+                <source src="aud/miau.mp3" type="audio/mpeg" id="G2">
+                Your browser does not support the <code>audio</code> tag.
+            </audio>
+            <audio controls>
+                <source src="aud/mystery.mp3" type="audio/mpeg" id="misterio">
+                Your browser does not support the <code>audio</code> tag.
+            </audio>
+        </div>
     </body>
 </html>
