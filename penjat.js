@@ -1,9 +1,16 @@
-  var vidas= 7;
+var vidas= 7;
   var palabro="";
   var letra="";
+  var seconds=0
+function timer(){
+seconds=seconds+1;
+document.getElementById("counter").innerHTML=seconds;
+}
+setInterval(timer,1000);
   function Verificar(){
   var lletra= document.getElementById("lletra").value;
-  
+  document.getElementById("lletra").value="";
+  lletra=lletra.toLowerCase();
   switch (lletra) {
     case 'à':
     case 'á':
@@ -37,7 +44,7 @@
     lletra='c';
          break;
 }
-  if((lletra >= "m")){
+  if((lletra >= "m")&&(lletra <= "z") || (lletra=="ñ")){
       vidas= vidas-1;
       document.getElementById("vidas").innerHTML=vidas;
       letra=lletra+letra+""
@@ -45,11 +52,15 @@
       document.body.style.backgroundImage="url('img/Jungle.png')"
       document.getElementById('Fallo').play();
       document.getElementById('tictac').play();
-} else{
+      
+} else if((lletra <= "m")&&(lletra >= "a") || (lletra=="ç")){
       palabro=lletra+palabro+""
       document.getElementById("palabro").innerHTML=palabro;
       document.getElementById('G2').play();
       document.body.style.backgroundImage="url('img/Desert.png')"
+      
+}else{
+    window.alert("Caracter incorrecte")
 }
   if ((vidas==0)){
       window.alert("Has perdut");
