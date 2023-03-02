@@ -1,17 +1,24 @@
-var vidas= 7;
+
+  var vidas= 7;
   var palabro="";
   var letra="";
-  var seconds=0
+  var seconds=0;
   var paraules=["fetge" , "forca" , "jutges" , "jutjat" , "mengen" , "penjat" , "quinta" , "setze"];
-  var paraula=paruales[Math.floor(Math.random()*paraules.lenght)];
-  var pos=paraula.indexOf(lletra)
+
+  var paraula=paraules[Math.floor(Math.random()*paraules.lenght)];
+  var pos=paraula.indexOf(lletra);
   var endevinades=[];
-  for (var i = 0;1>paraula.lenght;i++)
+  for (var i = 0; i < paraula.lenght; i++){
+      endevinades[i]="_";
+  }
+
+  
+  
 function timer(){
 seconds=seconds+1;
 document.getElementById("counter").innerHTML=seconds;
-
 setInterval(timer,1000);
+}
   function Verificar(){
   var lletra= document.getElementById("lletra").value;
   document.getElementById("lletra").value="";
@@ -49,7 +56,10 @@ setInterval(timer,1000);
     lletra='c';
          break;
 }
+
+var pos=paraula.indexOf(lletra);
   if((pos==-1)){
+      window.alert("fallat")
       vidas= vidas-1;
       document.getElementById("vidas").innerHTML=vidas;
       letra=lletra+letra+""
@@ -58,13 +68,14 @@ setInterval(timer,1000);
       document.getElementById('Fallo').play();
       document.getElementById('tictac').play();
   }
-} else if((pos>-1)){
+ else if((pos>-1)){
+      window.alert("encertat")
       palabro=lletra+palabro+"";
       document.getElementById("palabro").innerHTML=palabro;
       document.getElementById('G2').play();
       document.body.style.backgroundImage="url('img/Desert.png')";
       }   
-}else 
+else{ 
     window.alert("Caracter incorrecte");
 }
   if ((vidas==0)){
@@ -117,4 +128,5 @@ setInterval(timer,1000);
     document.getElementById("fondo1").hidden=true;
     document.getElementById("fondo2").hidden=true;
     document.getElementById("fondo3").hidden=true;
+    document.getElementById('endevinades').innerHTML = endevinades;
     }
