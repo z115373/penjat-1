@@ -1,10 +1,11 @@
-
-  var vidas= 7;
-  var palabro="";
-  var letra="";
+var vidas= 7;
+  var palabro=[];
+  var letra=["_" , "_" , "_" , "_" , "_" , "_" , "_"];
   var seconds=0;
   var paraules=["fetge" , "forca" , "jutges" , "jutjat" , "mengen" , "penjat" , "quinta" , "setze"];
-
+  var pistes=["A la quinta forca" , "A ca un penjat, no hi anomenis cordes" , "Setze jutges d'un jutjat mengen fetge d'un penjat"];
+  var paraulespistes=[1 , 2 , 0 , 2 , 2 , 2 , 1 , 0 , 2];
+  
   var paraula=paraules[Math.floor(Math.random()*paraules.lenght)];
   var pos=paraula.indexOf(lletra);
   var endevinades=[];
