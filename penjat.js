@@ -1,13 +1,27 @@
-var vidas= 7;
+ var vidas= 7;
   var palabro=[];
   var letra=["_" , "_" , "_" , "_" , "_" , "_" , "_"];
   var seconds=0;
-  var paraules=["fetge" , "forca" , "jutges" , "jutjat" , "mengen" , "penjat" , "quinta" , "setze"];
-  var pistes=["A la quinta forca" , "A ca un penjat, no hi anomenis cordes" , "Setze jutges d'un jutjat mengen fetge d'un penjat"];
+  var paraules=["fetge" , "forca" , "jutges" , "jutjat" , "mengen" , "penjat" , 
+      "quinta" , "setze"];
+  var pistes=["A la quinta forca" , "A ca un penjat, no hi anomenis cordes" , 
+      "Setze jutges d'un jutjat mengen fetge d'un penjat"];
   var paraulespistes=[1 , 2 , 0 , 2 , 2 , 2 , 1 , 0 , 2];
-  
-  var paraula=paraules[Math.floor(Math.random()*paraules.lenght)];
+  var taula=[
+    {"paraula":"cordes", "pista":"A ca un penjat, no hi anomenis cordes"},
+    {"paraula":"fetge", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
+    {"paraula":"forca", "pista":"A la quinta forca"},
+    {"paraula":"jutges", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
+    {"paraula":"jutjat", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
+    {"paraula":"mengen", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
+    {"paraula":"penjat", "pista":"A ca un penjat, no hi anomenis cordes"},
+    {"paraula":"quinta", "pista":"A la quinta forca"},
+    {"paraula":"setze", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"}
+  ];
+  var aleatori=Math.floor(Math.random()*paraules.lenght);
+  var paraula=paraules[aleatori];
   var pos=paraula.indexOf(lletra);
+  var pista=pistes[paraulespistes[aleatori]]
   var endevinades=[];
   for (var i = 0; i < paraula.lenght; i++){
       endevinades[i]="_";
