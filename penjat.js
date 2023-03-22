@@ -1,4 +1,4 @@
- var vidas= 7;
+var vidas= 7;
   var palabro=[];
   var letra=["_" , "_" , "_" , "_" , "_" , "_" , "_"];
   var seconds=0;
@@ -18,17 +18,14 @@
     {"paraula":"quinta", "pista":"A la quinta forca"},
     {"paraula":"setze", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"}
   ];
-  var aleatori=Math.floor(Math.random()*paraules.lenght);
+  var aleatori=Math.floor(Math.random()*paraules.length);
   var paraula=paraules[aleatori];
-  var pos=paraula.indexOf(lletra);
-  var pista=pistes[paraulespistes[aleatori]]
+  var pista=pistes[paraulespistes[aleatori]];
   var endevinades=[];
-  for (var i = 0; i < paraula.lenght; i++){
+  for (var i = 0; i < paraula.length; i++){
       endevinades[i]="_";
-  }
+  } 
 
-  
-  
 function timer(){
 seconds=seconds+1;
 document.getElementById("counter").innerHTML=seconds;
@@ -74,19 +71,23 @@ setInterval(timer,1000);
 
 var pos=paraula.indexOf(lletra);
   if((pos==-1)){
-      window.alert("fallat")
+      window.alert("fallat");
       vidas= vidas-1;
       document.getElementById("vidas").innerHTML=vidas;
-      letra=lletra+letra+""
+      letra=lletra+letra+"";
       document.getElementById("letras").innerHTML=letra;
-      document.body.style.backgroundImage="url('img/Jungle.png')"
+      document.body.style.backgroundImage="url('img/Jungle.png')";
       document.getElementById('Fallo').play();
       document.getElementById('tictac').play();
   }
  else if((pos>-1)){
-      window.alert("encertat")
-      palabro=lletra+palabro+"";
-      document.getElementById("palabro").innerHTML=palabro;
+      window.alert("encertat");
+      for (var i = pos; i < paraula.length; i++)
+      if (paraula[i]==){
+      Paraula[i]=lletra;
+         }
+  
+      document.getElementById("endevinades").innerHTML=palabro;
       document.getElementById('G2').play();
       document.body.style.backgroundImage="url('img/Desert.png')";
       }   
@@ -99,7 +100,7 @@ else{
       document.getElementById("boton").disabled=true;
       document.getElementById("A0").hidden=false;
       document.getElementById("A1").hidden=true;
-      document.body.style.backgroundImage="url('img/Castle2.png')"
+      document.body.style.backgroundImage="url('img/Castle2.png')";
       document.getElementById('campanadax3').play();
       document.getElementById('G1').play();
       lletra="";
