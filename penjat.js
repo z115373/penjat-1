@@ -1,5 +1,5 @@
-var vidas= 7;
-  var palabro=[];
+ var vidas= 7;
+  var Paraula=[];
   var letra=["_" , "_" , "_" , "_" , "_" , "_" , "_"];
   var seconds=0;
   var paraules=["fetge" , "forca" , "jutges" , "jutjat" , "mengen" , "penjat" , 
@@ -82,12 +82,12 @@ var pos=paraula.indexOf(lletra);
   }
  else if((pos>-1)){
       window.alert("encertat");
-      for (var i = pos; i < paraula.length; i++)
-      if (paraula[i]==){
-      Paraula[i]=lletra;
+      for (var i = pos; i < paraula.length; i++){
+      if (paraula[i]==lletra){
+      endevinades[i]=lletra;
          }
-  
-      document.getElementById("endevinades").innerHTML=palabro;
+     };
+      document.getElementById("endevinades").innerHTML=endevinades;
       document.getElementById('G2').play();
       document.body.style.backgroundImage="url('img/Desert.png')";
       }   
