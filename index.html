@@ -29,14 +29,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body onload="Esconder(); document.getElementById('misterio').play(); "
+    <body onload="Esconder(); document.getElementById('misterio').play();"
           style="background-image: url('img/Desert.png');
           background-size: 640px 480px; background-repeat: no-repeat;">
-        
         <div>Prototip Joc del Penjat</div>
         <input type="text" id="lletra" maxlength="1" placeholder="escriu la lletra en minuscules">
         <button onclick="Verificar()" id="boton">Comproba</button>
-         <h5 id="counter">0</h5>
+        <h6 id="punts">La teva Puntuació:</h6>
+        <h5 id="counter">0</h5>
         <h1>Paraules</h1>
         
         <div id="endevinades">___</div>
@@ -48,8 +48,14 @@
         <h3>Lletres</h3>
              
         <div id="letras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</div>
-        <br><br>
-        <a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat-on-scratch/">El joc del penjat on Scratch</a>
+        <br>
+        <button onclick="Pistas()" id="boton">Pista</button>
+        <br>
+        <br>
+        <a href="https://prosselloe.wordpress.com/2022/11/22/el-joc-del-penjat-on-scratch/">
+         El joc del penjat on Scratch
+        </a>
+        
         
         <a href="https://joc-del-penjat.netlify.app/">&nbsp;&nbsp;Mi netlify</a>
         
