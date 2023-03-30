@@ -1,23 +1,13 @@
- var vidas= 7;
+var vidas= 7;
+  var punts = 0;
   var Paraula=[];
   var letra=["_" , "_" , "_" , "_" , "_" , "_" , "_"];
   var seconds=0;
-  var paraules=["fetge" , "forca" , "jutges" , "jutjat" , "mengen" , "penjat" , 
-      "quinta" , "setze"];
+  var paraules=["cordes", "fetge" , "forca" , "jutges" , "jutjat" , "mengen" ,
+      "penjat", "quinta" , "setze"];
   var pistes=["A la quinta forca" , "A ca un penjat, no hi anomenis cordes" , 
       "Setze jutges d'un jutjat mengen fetge d'un penjat"];
   var paraulespistes=[1 , 2 , 0 , 2 , 2 , 2 , 1 , 0 , 2];
-  var taula=[
-    {"paraula":"cordes", "pista":"A ca un penjat, no hi anomenis cordes"},
-    {"paraula":"fetge", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
-    {"paraula":"forca", "pista":"A la quinta forca"},
-    {"paraula":"jutges", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
-    {"paraula":"jutjat", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
-    {"paraula":"mengen", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"},
-    {"paraula":"penjat", "pista":"A ca un penjat, no hi anomenis cordes"},
-    {"paraula":"quinta", "pista":"A la quinta forca"},
-    {"paraula":"setze", "pista":"Setze jutges d'un jutjat mengen fetge d'un penjat"}
-  ];
   var aleatori=Math.floor(Math.random()*paraules.length);
   var paraula=paraules[aleatori];
   var pista=pistes[paraulespistes[aleatori]];
@@ -25,12 +15,12 @@
   for (var i = 0; i < paraula.length; i++){
       endevinades[i]="_";
   } 
-
-function timer(){
-seconds=seconds+1;
-document.getElementById("counter").innerHTML=seconds;
-setInterval(timer,1000);
+alert(paraula);
+function timer() {
+seconds = seconds + 1;
+document.getElementById("counter").innerHTML = seconds;
 }
+setInterval(timer, 1000);
   function Verificar(){
   var lletra= document.getElementById("lletra").value;
   document.getElementById("lletra").value="";
@@ -72,9 +62,9 @@ setInterval(timer,1000);
 var pos=paraula.indexOf(lletra);
   if((pos==-1)){
       window.alert("fallat");
+      letra[7 - vidas]=lletra;
       vidas= vidas-1;
       document.getElementById("vidas").innerHTML=vidas;
-      letra=lletra+letra+"";
       document.getElementById("letras").innerHTML=letra;
       document.body.style.backgroundImage="url('img/Jungle.png')";
       document.getElementById('Fallo').play();
@@ -86,11 +76,22 @@ var pos=paraula.indexOf(lletra);
       if (paraula[i]==lletra){
       endevinades[i]=lletra;
          }
-     };
+     }
       document.getElementById("endevinades").innerHTML=endevinades;
       document.getElementById('G2').play();
       document.body.style.backgroundImage="url('img/Desert.png')";
-      }   
+       if(endevinades.indexOf("_") == -1) {
+    punts= endevinades.length * vidas* 10 - document.getElementById("counter").innerHTML;
+          if (punts < 0){ punts=0; }
+    document.getElementById("punts").innerHTML=" " + punts;
+    document.getElementById("A0").hidden=true;
+    document.getElementById("A1").hidden=true;
+    document.getElementById("A2").hidden=true;
+    document.getElementById("A3").hidden=true;
+    document.getElementById("A4").hidden=true;
+    document.getElementById("A5").hidden=true;
+      }
+  }
 else{ 
     window.alert("Caracter incorrecte");
 }
@@ -129,10 +130,9 @@ else{
       document.getElementById("A2").hidden=true;  
  }
  }
-
- 
-
-
+    function Pistas(){
+     alert(pista);
+    }
     function Esconder(){
     document.getElementById("A0").hidden=true;
     document.getElementById("A1").hidden=true;
