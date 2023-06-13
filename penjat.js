@@ -1,4 +1,5 @@
- const Idiomes = [
+ var Idiomes = [];
+  const Idiomes_dft = [
         {
             "IdIdioma": "ca",
             "Titol": "Versió amb Estructures de Dades Joc del Penjat",
@@ -206,7 +207,7 @@ var pos=paraula.indexOf(lletra);
   if ((vidas==0)){
       window.alert("i has perdut!");
       document.getElementById("lletra").disabled=true;
-      document.getElementById("boton").disabled=true;
+      document.getElementById("Comprovar").disabled=true;
       document.getElementById("A0").hidden=false;
       document.getElementById("A1").hidden=true;
       document.body.style.backgroundImage="url('img/Castle2.png')";
@@ -267,3 +268,20 @@ var pos=paraula.indexOf(lletra);
         document.getElementById("endenades").innerHTML=1;
         document.getElementById("endnades").innerHTML=1;
     }
+    
+function SQL(){
+        config = {
+            locateFile: file => `https://sql.js.org/dist/${file}`
+            // locateFile: filename => `https://unpkg.com/sql.js@1.6.2/dist/${filename}`
+        };
+        // The `initSqlJs` function is globally provided by all of the main dist files if loaded in the browser.
+        // We must specify this locateFile function if we are loading a wasm file from anywhere other than the
+        // current html page's folder.
+        alasql('ATTACH SQLITE DATABASE penjat("DBB/Penjat.db"); USE penjat; \n\
+                SELECT * FROM TblTextosGUI;',
+        //     [], function(idiomes) {Print_Data(idiomes = idiomes.pop());}
+            [], function(idiomes) {Idiomes = idiomes.pop();}
+        );
+        if (Idiomes.length == 0) {Idiomes = Idiomes_dft;};
+
+   }
