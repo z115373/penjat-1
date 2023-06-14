@@ -1,4 +1,4 @@
- var Idiomes = [];
+var Idiomes = [];
   const Idiomes_dft = [
         {
             "IdIdioma": "ca",
@@ -190,8 +190,11 @@ var pos=paraula.indexOf(lletra);
       document.body.style.backgroundImage="url('img/Desert.png')";
        if(endevinades.indexOf("_") == -1) {
            window.alert("i has guanyat!");
+      document.getElementById("lletra").disabled=true;
+      document.getElementById("Comprovar").disabled=true;
       punts= endevinades.length * vidas* 10 - document.getElementById("counter").innerHTML;
        if (punts < 0){ punts=0; }
+      document.body.style.backgroundImage="('img/Party.png')";
       document.getElementById("Puntuacio").innerHTML=" " + punts;
       document.getElementById("A0").hidden=true;
       document.getElementById("A1").hidden=true;
@@ -253,7 +256,9 @@ var pos=paraula.indexOf(lletra);
     document.getElementById("fondo1").hidden=true;
     document.getElementById("fondo2").hidden=true;
     document.getElementById("fondo3").hidden=true;
+    document.getElementById("fondo4").hidden=true;
     document.getElementById('endevinades').innerHTML = endevinades;
+   
     }
     
     function CanviarIdioma(IdIdioma){
@@ -285,3 +290,17 @@ function SQL(){
         if (Idiomes.length == 0) {Idiomes = Idiomes_dft;};
 
    }
+   
+    function Print_Data(res) {
+        for (var i in res)
+        {
+           // console.log("row " + i);
+           // document.getElementById("res").innerHTML += "<br>";
+           for (var j in res[i])
+             {
+              // console.log(" " + res[i][j]);
+              // document.getElementById("res").innerHTML += res[i][j] + ", ";
+              window.alert("res[" + i + "][" +j + "] = " + res[i][j]);
+             }
+        }
+    }
